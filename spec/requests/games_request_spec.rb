@@ -28,7 +28,7 @@ describe "Games API" do
     sal.plays.create(game: game, word: "no", score: 2)
 
     get "/api/v1/games/1"
-binding.pry
+    
     expect(game["game_id"]).to eq(1)
     expect(game["scores"][0]["user_id"]).to eq(1)
     expect(game["scores"][0]["score"]).to eq(14)

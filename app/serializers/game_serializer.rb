@@ -1,12 +1,23 @@
 class GameSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :game_id, :scores
 
-  def total_scores
-    binding.pry
-    self.plays.map do |play|
-      if play.user_id == 1
-        play.score
-      end
-    end.sum
+
+  def game_id
+    self.object.id
   end
+
+  def scores
+    self.object.plays.map do |play|
+        play.score
+      end.sum
+  end
+
+
+  # self.object.plays.map do |play|
+  #     if play.user_id == 2
+  #       play.score
+  #     end.sum
+  #   end
+
+
 end
