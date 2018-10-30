@@ -1,5 +1,8 @@
 class OxfordService
 
+  def initalize
+  end
+
   def generate_sentences(word)
     get_json("entries/en/#{word}/sentences")
   end

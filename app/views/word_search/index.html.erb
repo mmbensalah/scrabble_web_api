@@ -1,1 +1,8 @@
-<%= @examples %>
+<h1> Examples for using '<%= @word %>' </h1>
+
+<div class="examples">
+  <% @examples.each do |ex| %>
+  <div class="region"> <%= ex.region %> </div>
+  <div class="sentence"><%= ex.sentence %></div>
+  <% end %>
+</div>
