@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/word-search', to: 'word_search#index'
   namespace :api do
 		namespace :v1 do
-			resources :objects, only: [:show]
+			resources :games, only: [:show]
 		end
 	end
 end
