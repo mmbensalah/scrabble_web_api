@@ -1,0 +1,13 @@
+<h3>Search for a word</h3>
+
+<div>
+  <%= form_tag('/find', method: :post) do %>
+    <div>
+      <%= text_field_tag :word_search%>
+    </div>
+
+    <div>
+      <%= submit_tag 'Submit' %>
+    </div>
+  <% end %>
+</div>
