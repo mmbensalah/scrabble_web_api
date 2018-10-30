@@ -12,12 +12,13 @@ class GameSerializer < ActiveModel::Serializer
       end.sum
   end
 
+  # def scores
+  #   [{"#{self.object.user_id}": 1, "score": self.object.plays.score} ]
+  # end
+
+end
 
   # self.object.plays.map do |play|
   #     if play.user_id == 2
   #       play.score
   #     end.sum
-  #   end
-
-
-end
