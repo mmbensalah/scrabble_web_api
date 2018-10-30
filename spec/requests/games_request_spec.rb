@@ -1,20 +1,20 @@
 require "rails_helper"
 
 describe "Games API" do
-  it "returns all games" do
-    josh = User.create(id: 1, name: "Josh")
-    sal = User.create(id: 2, name: "Sal")
-
-    game = Game.create(id: 1, player_1: josh, player_2: sal)
-
-    get "/api/v1/games/1"
-
-    expect(response).to be_successful
-    game = JSON.parse(response.body)
-    expect(game["id"]).to eq(1)
-    expect(game["player_1_id"]).to eq(1)
-    expect(game["player_2_id"]).to eq(2)
-  end
+  # it "returns all games" do
+  #   josh = User.create(id: 1, name: "Josh")
+  #   sal = User.create(id: 2, name: "Sal")
+  #
+  #   game = Game.create(id: 1, player_1: josh, player_2: sal)
+  #
+  #   get "/api/v1/games/1"
+  #
+  #   expect(response).to be_successful
+  #   game = JSON.parse(response.body)
+  #   expect(game["id"]).to eq(1)
+  #   expect(game["player_1_id"]).to eq(1)
+  #   expect(game["player_2_id"]).to eq(2)
+  # end
 
   it "returns games w/ scores" do
     josh = User.create(id: 1, name: "Josh")
@@ -28,7 +28,7 @@ describe "Games API" do
     sal.plays.create(game: game, word: "no", score: 2)
 
     get "/api/v1/games/1"
-
+binding.pry
     expect(game["game_id"]).to eq(1)
     expect(game["scores"][0]["user_id"]).to eq(1)
     expect(game["scores"][0]["score"]).to eq(14)
