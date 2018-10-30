@@ -10,6 +10,7 @@ describe 'As a visitor' do
       # And I fill in a text box with "mindfulness"
       click_on "Submit"
       # And I click "Submit"
+      expect(current_path).to eq "/mindfulness"
       expect(page).to have_content ("Examples for using 'mindfulness'")
       # Then I should see a message that says "Examples for using 'mindfulness'"
       within ".examples" do
